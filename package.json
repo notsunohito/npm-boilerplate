@@ -1,0 +1,36 @@
+{
+  "name": "npm-boilerplate",
+  "version": "1.0.0",
+  "description": "A boilerplate for npm package.",
+  "main": "lib/NpmPackageName.js",
+  "scripts": {
+    "prepublish": "babel src --out-dir lib",
+    "test": "mocha --require babel-register test",
+    "test:watch": "mocha --require babel-register --watch test",
+    "build": "npm run flow:check && babel src --out-dir lib",
+    "flow:check": "./node_modules/.bin/flow check"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/notsunohito/npm-boilerplate.git"
+  },
+  "bugs": {
+    "url": "https://github.com/notsunohito/npm-boilerplate/issues"
+  },
+  "keywords": [
+    "npm",
+    "boilerplate"
+  ],
+  "author": "Shuichiro Kamiya",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-plugin-transform-flow-strip-types": "^6.22.0",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-register": "^6.24.1",
+    "chai": "^4.1.0",
+    "flow-bin": "^0.49.1",
+    "mocha": "^3.4.2"
+  }
+}
